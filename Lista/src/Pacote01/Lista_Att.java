@@ -53,9 +53,9 @@ public class Lista_Att {
     if (verificar(posicao)){
       for (int i = quantidade-1; i <= posicao; i--){
         elementos[i+1] = elementos[i];
+        elementos[posicao] = elemento;
+        quantidade++;
       }
-      elementos[posicao] = elemento;
-      quantidade++;
     }
   }
   
@@ -68,20 +68,19 @@ public class Lista_Att {
   }
 
   public void removerPosicao(int posicao){
-    if (verificar(posicao)){
-      for (int i = quantidade; i >= posicao; i--){
-        elementos[i] = elementos[i-1];
-      }
-      quantidade--;
+    if (estaVazia(){
+      for (int i = posicao; i < quantidade-1; i++){
+        elemento[i] = elemento[i+1];
+        quantidade--;
     }
   }
-  public void removerInicio(int posicao){
+        
+  public void removerInicio(){
     removerPosicao(0);
-    quantidade--;
   }
+        
   public void removerFinal(){
-    removerPosicao(quantidade);
-    quantidade--;
+    removerPosicao(quantidade-1);
   }
 
   public void exibir(){
