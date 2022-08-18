@@ -190,6 +190,7 @@ public class Lista {
         for (int j = quantidade - 1; j > i; j--){
           if (elementos[i] == elementos[j]){
             removerPosicao(j);
+            j--;
           } 
         }
       }
